@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-lg border shadow-sm;
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border-color: hsl(var(--border));
+  }
+  .btn {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn h-10 px-4 py-2;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+  .btn-secondary {
+    @apply btn h-10 px-4 py-2;
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+  }
+  .btn-secondary:hover {
+    opacity: 0.8;
+  }
+  .btn-destructive {
+    @apply btn h-10 px-4 py-2;
+    background-color: hsl(var(--destructive));
+    color: hsl(var(--destructive-foreground));
+  }
+  .btn-destructive:hover {
+    opacity: 0.9;
+  }
+  .btn-outline {
+    @apply btn h-10 px-4 py-2;
+    border: 1px solid hsl(var(--input));
+    background-color: hsl(var(--background));
+  }
+  .btn-outline:hover {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+  .btn-ghost {
+    @apply btn h-10 px-4 py-2;
+  }
+  .btn-ghost:hover {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+  .btn-sm {
+    @apply h-9 px-3 rounded-md text-sm;
+  }
+  .btn-xs {
+    @apply h-8 px-2.5 rounded-md text-xs;
+  }
+  .input {
+    @apply flex h-10 w-full rounded-md border px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+    border-color: hsl(var(--input));
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors;
+  }
+  .badge-default {
+    @apply badge;
+    border-color: transparent;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+  .badge-secondary {
+    @apply badge;
+    border-color: transparent;
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+  }
+  .badge-outline {
+    @apply badge;
+    color: hsl(var(--foreground));
+  }
+  .badge-success {
+    @apply badge;
+    border-color: transparent;
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+  }
+  .badge-warning {
+    @apply badge;
+    border-color: transparent;
+    background-color: rgba(234, 179, 8, 0.15);
+    color: #eab308;
+  }
+  .badge-destructive {
+    @apply badge;
+    border-color: transparent;
+    background-color: hsl(var(--destructive));
+    color: hsl(var(--destructive-foreground));
+  }
+  .badge-info {
+    @apply badge;
+    border-color: transparent;
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #3b82f6;
+  }
+  .table {
+    @apply w-full caption-bottom text-sm;
+  }
+  .table thead {
+    @apply border-b;
+  }
+  .table th {
+    @apply h-12 px-4 text-left align-middle font-medium;
+    color: hsl(var(--muted-foreground));
+  }
+  .table tbody {
+    @apply border-b;
+  }
+  .table td {
+    @apply p-4 align-middle;
+  }
+}
